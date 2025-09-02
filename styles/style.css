@@ -106,6 +106,22 @@ ul {
 	gap: 1.25rem;
 }
 
+.audio-control {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	width: fit-content;
+
+}
+
+#controlButton {
+	width: 1.5rem;
+	background: none;
+	border: none;
+	cursor: pointer;
+	gap: 1rem;
+}
+
 #nav-btn {
 	display: flex;
 	align-items: center;
@@ -134,7 +150,11 @@ ul {
 	padding: 10px 10px;
 }
 
-#nav-btn svg {
+#controlButton {
+	width: fit-content;
+}
+
+#controlButton svg{
 	width: 1.5rem;
 }
 

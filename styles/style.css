@@ -81,7 +81,7 @@ ul {
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;	
-	height: 100vh;
+	height: 100%;
 	background:  #d6c7a195;
 }
 
@@ -118,7 +118,6 @@ ul {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-left: 3.125rem;
 }
 
 .nav-content ul {
@@ -227,7 +226,7 @@ ul {
 
 .hero-text p {
 	color: gray;
-	width: 50%;
+	width: 60%;
 	line-height: 1.5rem;
 }
 
@@ -262,7 +261,8 @@ ul {
 
 .hero-right img {
 	max-width: 100%;
-	padding: 20px 30px;
+	height: auto;
+	/* padding: 1rem 2rem; */
 	margin-top: 3rem;
 }
 
@@ -300,15 +300,17 @@ ul {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
-	padding: 3rem 1rem;;
-	border-radius: 2rem;
-	width: 100%;
+	justify-content: space-between	;
+	max-width: 100%;
 	height: fit-content;
+	min-height: auto;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	padding: 1rem 1rem;
+	border-radius: 2rem;
 	box-shadow: 0 2px 6px rgb(78, 78, 78);
 	transition: 0.5s;
-	aspect-ratio: 4/3;
-	overflow: hidden;
+	/* overflow: hidden; */
 }
 
 .service-box:hover {
@@ -319,7 +321,7 @@ ul {
 
 .services-icon {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: center;
 	aspect-ratio: 1/1;
 	width: fit-content;
@@ -341,8 +343,7 @@ ul {
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	font-size: large;
-	padding-bottom: 2rem;
+	font-size: clamp(0.6rem, 1rem, 1rem);
 }
 
 /* projects */
@@ -411,7 +412,9 @@ ul {
 
 .project-cover img {
 	max-width: 100%;
-	height: 100%;
+	height: auto;
+	aspect-ratio: 16/9;
+	object-fit: cover;
 }
 
 .project-info {
@@ -474,9 +477,11 @@ ul {
 .ctLeft {
 	width: 50%;
 	display: flex;
+	align-items: center;
 	flex-direction: column;
 	gap: 2rem;
 	text-shadow: 1px 1px 2px rgb(255, 255, 255);
+	text-align: center;
 }
 
 .ctLeft h3 {
@@ -530,6 +535,7 @@ ul {
 
 .ctRight {
 	width: 50%;
+	min-width: 0;
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
@@ -557,6 +563,8 @@ ul {
 }
 
 .ctRight form>input, textarea {
+	width: 100%;
+	box-sizing: border-box;
 	border: solid 1px rgba(0, 0, 0, 0.268);
 	background: #D6C7A1;
 	padding: 0.3rem 1rem;
@@ -591,4 +599,82 @@ footer {
 	justify-content: center;
 	width: 100%;
 	height: 10%;
+}
+
+@media screen and (max-width: 768px) {
+	/* nav */
+	.navbar {
+		flex-direction: column;
+		padding: 0.75rem 3rem;
+	}
+	/* main */
+	#hero {
+		padding: 0.5rem 1rem;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		height: fit-content;
+	}
+
+	.hero-left {
+		padding: 2rem 0;
+	}
+
+	.hero-text {
+		text-align: center;
+	}
+
+	.hero-text p {
+		width: 100%;
+	}
+
+	.hero-right {
+		display: none;
+	}
+
+	/* service */
+	.services-main {
+		padding: 0 3rem;
+	}
+	
+	.service-container {
+		flex-direction: column;
+	}
+
+	/* project */
+	#projects {
+		height: 100%;
+	}
+
+	.project-container {
+		padding: 2rem 3rem;
+	}
+
+	.project-content {
+		flex-direction: column;
+	}
+
+	/* contact */
+	.contactTop {
+		align-items: center;
+		/* justify-content: center; */
+		padding: 0 3rem;
+		flex-direction: column;	
+		gap: 1rem	;
+	}
+
+	.ctRight {
+		width: 100%;
+		height: 100%;
+		text-align: center;
+	}
+
+	.ctRight form>input, textarea {
+		transform: scale(1.2);
+	}
+
+	.ctLeft>h3, .ctLeft>p {
+		display: none;
+	}
 }
